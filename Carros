@@ -1,0 +1,22 @@
+using System;
+
+class Vendedor
+{
+    static void Main()
+    {
+        Console.Write("Número de carros vendidos: ");
+        int carros = int.Parse(Console.ReadLine());
+        Console.Write("Valor total das vendas: ");
+        double totalVendas = double.Parse(Console.ReadLine());
+        Console.Write("Salário fixo: ");
+        double salarioFixo = double.Parse(Console.ReadLine());
+        Console.Write("Comissão por carro: ");
+        double comissaoPorCarro = double.Parse(Console.ReadLine());
+
+        double salarioFinal = salarioFixo
+                            + (comissaoPorCarro * carros)
+                            + (totalVendas * 0.05);
+
+        Console.WriteLine($"Salário final: R$ {salarioFinal:F2}");
+    }
+}
