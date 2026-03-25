@@ -1,0 +1,28 @@
+using System;
+
+class HorasExtras
+{
+    static void Main()
+    {
+        Console.Write("Horas trabalhadas no mês: ");
+        double horasMes = double.Parse(Console.ReadLine());
+        Console.Write("Salário por hora: ");
+        double valorHora = double.Parse(Console.ReadLine());
+
+        double horasNormais = 40 * 4; // 160h por mês
+        double salario;
+
+        if (horasMes <= horasNormais)
+        {
+            salario = horasMes * valorHora;
+        }
+        else
+        {
+            double horasExtras = horasMes - horasNormais;
+            salario = (horasNormais * valorHora)
+                    + (horasExtras * valorHora * 1.5);
+        }
+
+        Console.WriteLine($"Salário total: R$ {salario:F2}");
+    }
+}
